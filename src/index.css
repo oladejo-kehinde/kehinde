@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Parisienne&family=Poppins:wght@300;400;500;600;700;900&display=swap');
+@import "tailwindcss";
+
+/* Base layout & smooth scroll */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar { 
+  width: 5px; 
+}
+::-webkit-scrollbar-track { 
+  background: #08090a; 
+}
+::-webkit-scrollbar-thumb { 
+  background: #279399; 
+  border-radius: 3px; 
+}
+
+/* Navigation link underline indicator */
+.nav-link { 
+  position: relative; 
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #31ccbf;
+  transform: scaleX(0);
+  transition: transform 0.25s ease;
+  border-radius: 2px;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after { 
+  transform: scaleX(1); 
+}
+
+.nav-link.active { 
+  color: #31ccbf; 
+}
+
+/* Design Tokens */
+:root {
+  --primary-base: #31ccbf;
+  --primary-tint: #e5fbfb;
+  --primary-shade: #279399;
+  --primary-deep-shade: #0f423d;
+
+  --secondary-base: #12cc89;
+  --secondary-tint: #d4f0e4;
+  --secondary-shade: #0e9368;
+
+  --tertiary-base: #cc313e;
+  --tertiary-shade: #531318;
+  --tertiary-tint: #fddde0;
+
+  --gray-light: #f5f5f5;
+  --gray-medium: #cccccc;
+
+  /* Light Theme Defaults */
+  --bg-body: #f6f6f6ef;
+  --text-base: #0c0c0cf1;
+  --muted-text: rgba(12, 12, 12, 0.65);
+  --card-bg: #ffffff;
+  --surface-bg: #fafafa;
+}
+
+/* Dark Theme Overrides (Near-Black Professional Aesthetics) */
+.dark {
+  --bg-body: #08090a;
+  --text-base: #f5f7f6;
+  --muted-text: rgba(245, 247, 246, 0.7);
+  --card-bg: #0f1115;
+  --surface-bg: #14171d;
+}
+
+@theme inline {
+  --font-poppins: "Poppins", sans-serif;
+  --font-parisienne: "Parisienne", cursive;
+
+  --color-primary: var(--primary-base);
+  --color-primary-tint: var(--primary-tint);
+  --color-primary-shade: var(--primary-shade);
+  --color-primary-deep-shade: var(--primary-deep-shade);
+
+  --color-secondary: var(--secondary-base);
+  --color-secondary-tint: var(--secondary-tint);
+  --color-secondary-shade: var(--secondary-shade);
+
+  --color-tertiary: var(--tertiary-base);
+  --color-tertiary-tint: var(--tertiary-tint);
+  --color-tertiary-shade: var(--tertiary-shade);
+
+  --color-gray-light: var(--gray-light);
+  --color-gray-medium: var(--gray-medium);
+
+  --color-body: var(--bg-body);
+  --color-base-text: var(--text-base);
+  --color-muted-text: var(--muted-text);
+  --color-card: var(--card-bg);
+  --color-surface: var(--surface-bg);
+}
