@@ -1,39 +1,45 @@
-
 import profileImg from '../assets/oladejo-kehinde.jpg';
 
 export default function About() {
   return (
     <section id="about" className="py-24 px-4 sm:px-6 lg:px-8 bg-body">
-      <div className="mx-auto max-w-5xl">
+      <div className="mx-auto max-w-6xl">
         
-        {/* Section Header */}
-        <div className="mb-12">
-          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-base-text">
-            About <span className="text-primary">Me</span>
-          </h2>
-          <p className="mt-2 text-sm sm:text-base text-muted-text">
-            Creating solutions, not just automations.
-          </p>
-        </div>
-
-        {/* Main Content Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           
-          {/* Left Side: Image Container */}
-          <div className="lg:col-span-5 relative">
-            <div className="relative mx-auto max-w-sm lg:max-w-none rounded-2xl overflow-hidden border border-primary/20 bg-card shadow-2xl aspect-[4/5]">
-             
-              <img 
-                src={profileImg} 
-                alt="Kenny" 
-                className="w-full h-full object-cover transition-all duration-500"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-body/60 via-transparent to-transparent pointer-events-none"></div>
+          {/* Left Side: Unique Tech Frame for Image */}
+          <div className="lg:col-span-5 relative group">
+            {/* Soft Ambient Teal Glow Behind Image */}
+            <div className="absolute -inset-1 bg-gradient-to-r from-primary/30 to-primary/5 rounded-3xl blur-xl opacity-50 group-hover:opacity-80 transition duration-500"></div>
+            
+            {/* Main Image Frame */}
+            <div className="relative rounded-2xl overflow-hidden bg-card border border-primary/20 p-2 shadow-2xl aspect-[4/5]">
+              <div className="w-full h-full rounded-xl overflow-hidden relative">
+                <img 
+                  src={profileImg} 
+                  alt="Oladejo Kehinde" 
+                  className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+                />
+                {/* Subtle dark gradient overlay for depth */}
+                <div className="absolute inset-0 bg-gradient-to-t from-body/40 via-transparent to-transparent pointer-events-none"></div>
+              </div>
             </div>
           </div>
 
-          {/* Right Side: Narrative & Exact Details */}
-          <div className="lg:col-span-7 bg-card border border-primary/10 rounded-2xl p-6 sm:p-8 shadow-xl flex flex-col justify-between">
+          {/* Right Side: Header + Biography Text */}
+          <div className="lg:col-span-7 flex flex-col justify-center">
+            
+            {/* Section Header */}
+            <div className="mb-6">
+              <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-base-text">
+                About <span className="text-primary">Me</span>
+              </h2>
+              <p className="mt-2 text-sm sm:text-base font-semibold text-primary tracking-wide">
+                Creating solutions, not just automations.
+              </p>
+            </div>
+
+            {/* Paragraph Copy */}
             <div className="space-y-4 text-sm sm:text-base leading-relaxed text-muted-text">
               <p>
                 My work focuses on assisting individuals, businesses, and teams by simplifying daily operations through workflow automation, data management, and practical digital solutions. From client onboarding and inquiry management to organizing information and streamlining email communication, I create systems that reduce repetitive tasks and make work more efficient.
@@ -43,13 +49,6 @@ export default function About() {
               </p>
             </div>
 
-            {/* Core Competency Tags */}
-            <div className="mt-8 pt-6 border-t border-gray-medium/10 flex flex-wrap gap-2 sm:gap-3 text-xs sm:text-sm font-medium text-primary">
-              <span className="px-3 py-1 rounded-full bg-primary/10 border border-primary/20">Workflow Automation</span>
-              <span className="px-3 py-1 rounded-full bg-primary/10 border border-primary/20">Data Management</span>
-              <span className="px-3 py-1 rounded-full bg-primary/10 border border-primary/20">Digital Solutions</span>
-              <span className="px-3 py-1 rounded-full bg-primary/10 border border-primary/20">Community Leadership</span>
-            </div>
           </div>
 
         </div>
