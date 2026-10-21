@@ -1,11 +1,11 @@
 import { Badge } from './SectionHeader';
 
-const EMAIL = "oladejokehinde43@gmail.com";
+const EMAIL = "kehindeoladejo43@gmail.com";
 
 export const SOCIALS = [
   {
     label: "LinkedIn",
-    href: "https://linkedin.com/in/oladejokehinde",
+    href: "https://linkedin.com/in/oladejo-kehinde",
     external: true,
     icon: (
       <svg className="h-5 w-5 fill-current" viewBox="0 0 24 24" aria-hidden="true">
@@ -41,7 +41,7 @@ export const SOCIALS = [
   },
   {
     label: "Discord",
-    href: "https://discord.com",
+    href: "https://discord.gg/fuUykwJH",
     external: true,
     icon: (
       <svg className="h-5 w-5 fill-current" viewBox="0 0 24 24" aria-hidden="true">

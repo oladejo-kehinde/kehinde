@@ -60,8 +60,8 @@ export default function ContactSection() {
                 </div>
                 <div>
                   <p className="text-xs uppercase tracking-wider text-muted-text">Email</p>
-                  <a href="mailto:oladejokehinde@gmail.com" className="text-sm font-semibold text-base-text hover:text-accent transition-colors">
-                    oladejokehinde@gmail.com
+                  <a href="mailto:kehindeoladejo43@gmail.com" className="text-sm font-semibold text-base-text hover:text-accent transition-colors">
+                    kehindeoladejo43@gmail.com
                   </a>
                 </div>
               </div>
@@ -118,7 +118,7 @@ export default function ContactSection() {
   <div className="flex items-center gap-3">
     {/* LinkedIn */}
     <a
-      href="https://linkedin.com"
+      href="https://linkedin.com/in/oladejo-kehinde"
       target="_blank"
       rel="noreferrer"
       aria-label="LinkedIn"
@@ -131,7 +131,7 @@ export default function ContactSection() {
 
     {/* Email */}
     <a
-      href="mailto:oladejokehinde@gmail.com"
+      href="mailto:kehindeoladejo43@gmail.com"
       aria-label="Email"
       className="flex h-11 w-11 items-center justify-center rounded-full border border-gray-medium/20 bg-card text-base-text transition-all hover:bg-primary hover:text-slate-900"
     >
@@ -155,7 +155,7 @@ export default function ContactSection() {
 
     {/* Discord */}
     <a
-      href="https://discord.com"
+      href="https://discord.gg/fuUykwJH"
       target="_blank"
       rel="noreferrer"
       aria-label="Discord"
