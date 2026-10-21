@@ -144,21 +144,18 @@ export default function ProjectPage() {
                                 </>
                             )}
 
-                            <div className="mt-8 flex flex-col gap-3">
-                                {project.liveLink && (
+                            {project.liveLink && (
+                                <div className="mt-8">
                                     <a
                                         href={project.liveLink}
                                         target="_blank"
                                         rel="noreferrer"
-                                        className="inline-flex items-center justify-center gap-2 rounded-full bg-primary px-6 py-3 text-xs font-bold uppercase tracking-wider text-black shadow-lg shadow-primary/20 transition-all hover:bg-primary-shade focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+                                        className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-primary px-6 py-3 text-xs font-bold uppercase tracking-wider text-black shadow-lg shadow-primary/20 transition-all hover:bg-primary-shade focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
                                     >
                                         Open project <span aria-hidden="true">→</span>
                                     </a>
-                                )}
-                                <Link to="/#projects" className={backLinkClass}>
-                                    <span aria-hidden="true">←</span> Back to projects
-                                </Link>
-                            </div>
+                                </div>
+                            )}
                         </div>
                     </aside>
 
@@ -197,10 +194,6 @@ export default function ProjectPage() {
                                 <StoryCard icon={solutionIcon} title="What I built" text={project.solution} accent />
                             </FadeIn>
                         )}
-
-                        {/* Walkthrough video */}
-
-                        {/* Workflow screenshot */}
 
                     </div>
                 </div>
