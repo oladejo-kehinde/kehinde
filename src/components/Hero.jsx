@@ -15,7 +15,7 @@ export const SOCIALS = [
   },
   {
     label: "Email",
-    href: `${EMAIL}`,
+    href: `mailto:${EMAIL}`,
     external: false,
     icon: (
       <svg
@@ -30,7 +30,7 @@ export const SOCIALS = [
     ),
   },
   {
-    label: "WhatsApp", 
+    label: "WhatsApp",
     href: "https://wa.me/+2349130893909",
     external: true,
     icon: (
@@ -52,68 +52,68 @@ export const SOCIALS = [
 ];
 
 const iconLink =
-    "flex h-10 w-10 items-center justify-center rounded-full border border-primary/30 bg-card text-accent transition-all hover:bg-primary hover:text-black focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary";
+  "flex h-10 w-10 items-center justify-center rounded-full border border-primary/30 bg-card text-accent transition-all hover:bg-primary hover:text-black focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary";
 
 export default function Hero() {
-    return (
-        <section
-            id="home"
-            className="relative flex min-h-svh w-full items-center justify-center overflow-hidden px-4 pb-16 pt-24 sm:px-6 lg:px-8"
-        >
-            {/* Soft glow on the right, standing in for where the photo would sit */}
-            <div
-                aria-hidden="true"
-                className="pointer-events-none absolute right-[8%] top-1/2 hidden h-[28rem] w-[28rem] -translate-y-1/2 rounded-full bg-primary/20 blur-3xl lg:block"
-            />
+  return (
+    <section
+      id="home"
+      className="relative flex min-h-svh w-full items-center justify-center overflow-hidden px-4 pb-16 pt-24 sm:px-6 lg:px-8"
+    >
+      {/* Soft glow on the right, standing in for where the photo would sit */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute right-[8%] top-1/2 hidden h-[28rem] w-[28rem] -translate-y-1/2 rounded-full bg-primary/20 blur-3xl lg:block"
+      />
 
-            <div className="relative w-full max-w-7xl text-center lg:text-left">
-                {/* Name badge */}
-                {/* Name badge */}
-<div className="mb-2">
-    <Badge>Oladejo Kehinde</Badge>
-</div>
+      <div className="relative w-full max-w-7xl text-center lg:text-left">
+        {/* Name badge */}
+        {/* Name badge */}
+        <div className="mb-2">
+          <Badge>Oladejo Kehinde</Badge>
+        </div>
 
-                {/* One h1 per page; the role is part of it so search engines and screen readers read both together */}
-                <h1 className="space-y-3 font-bold uppercase leading-tight tracking-tight">
-                    <span className="block text-2xl text-base-text sm:text-3xl lg:text-4xl">
-                        Hi, I&apos;m Kenny
-                    </span>
-                    <span className="block text-2xl text-accent sm:text-3xl lg:text-4xl">
-                        Automation Specialist
-                    </span>
-                </h1>
+        {/* One h1 per page; the role is part of it so search engines and screen readers read both together */}
+        <h1 className="space-y-3 font-bold uppercase leading-tight tracking-tight">
+          <span className="block text-2xl text-base-text sm:text-3xl lg:text-4xl">
+            Hi, I&apos;m Kenny
+          </span>
+          <span className="block text-2xl text-accent sm:text-3xl lg:text-4xl">
+            Automation Specialist
+          </span>
+        </h1>
 
-                {/* Normal sentence case so the longer line stays easy to read */}
-                <p className="mx-auto mt-8 max-w-xl lg:mx-0 text-base font-medium leading-relaxed text-base-text md:text-lg">
-                    Building smarter workflows and making everyday work simpler through
-                    automation and digital tools.
-                </p>
+        {/* Normal sentence case so the longer line stays easy to read */}
+        <p className="mx-auto mt-8 max-w-xl lg:mx-0 text-base font-medium leading-relaxed text-base-text md:text-lg">
+          Building smarter workflows and making everyday work simpler through
+          automation and digital tools.
+        </p>
 
-                {/* Actions */}
-                <div className="mt-10 flex flex-wrap items-center justify-center gap-4 lg:justify-start">
-                    <a
-                        href={`mailto:${EMAIL}`}
-                        className="inline-flex items-center gap-2 rounded-full bg-primary px-7 py-3.5 text-xs font-bold uppercase tracking-wider text-black shadow-lg shadow-primary/20 transition-all hover:bg-primary/90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary sm:text-sm"
-                    >
-                        Get in touch <span aria-hidden="true">→</span>
-                    </a>
+        {/* Actions */}
+        <div className="mt-10 flex flex-wrap items-center justify-center gap-4 lg:justify-start">
+          <a
+            href={`mailto:${EMAIL}`}
+            className="inline-flex items-center gap-2 rounded-full bg-primary px-7 py-3.5 text-xs font-bold uppercase tracking-wider text-black shadow-lg shadow-primary/20 transition-all hover:bg-primary/90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary sm:text-sm"
+          >
+            Get in touch <span aria-hidden="true">→</span>
+          </a>
 
-                    <ul className="flex items-center gap-3">
-                        {SOCIALS.map(({ label, href, icon, external }) => (
-                            <li key={label}>
-                                <a
-                                    href={href}
-                                    aria-label={label}
-                                    className={iconLink}
-                                    {...(external && { target: "_blank", rel: "noreferrer" })}
-                                >
-                                    {icon}
-                                </a>
-                            </li>
-                        ))}
-                    </ul>
-                </div>
-            </div>
-        </section>
-    );
+          <ul className="flex items-center gap-3">
+            {SOCIALS.map(({ label, href, icon, external }) => (
+              <li key={label}>
+                <a
+                  href={href}
+                  aria-label={label}
+                  className={iconLink}
+                  {...(external && { target: "_blank", rel: "noreferrer" })}
+                >
+                  {icon}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </section>
+  );
 }
