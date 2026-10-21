@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react'
+import { Link, useLocation } from 'react-router-dom'
 import Logo from './Logo'
 import { navLinks } from '../Data/data'
 
-// Shared look for the two round icon buttons (theme + hamburger) so they always match.
 const iconButton =
   'flex h-10 w-10 md:h-9 md:w-9 items-center justify-center rounded-full border border-primary/20 ' +
-  'text-muted-text transition-all hover:border-primary hover:text-primary ' +
+  'text-muted-text transition-all hover:border-primary hover:text-accent ' +
   'focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary'
 
 function ThemeIcon({ theme }) {
@@ -24,7 +24,8 @@ function ThemeIcon({ theme }) {
 }
 
 export default function Nav({ scrolled }) {
-  // Start on the first nav link so it always matches your data file.
+  const { pathname } = useLocation()
+
   const [active, setActive] = useState(navLinks[0]?.href ?? '#home')
   const [open, setOpen] = useState(false)
   const [theme, setTheme] = useState(() => {
@@ -52,6 +53,8 @@ export default function Nav({ scrolled }) {
     }
   }, [theme])
 
+  // Restarts whenever the page changes, because the home sections
+  // only exist while i am on the home page.
   useEffect(() => {
     const sections = navLinks
       .map(({ href }) => document.querySelector(href))
@@ -78,9 +81,8 @@ export default function Nav({ scrolled }) {
     sections.forEach((section) => observer.observe(section))
 
     return () => observer.disconnect()
-  }, [])
+  }, [pathname])
 
-  // Let people close the open mobile menu with the Escape key.
   useEffect(() => {
     if (!open) return undefined
     const onKeyDown = (e) => { if (e.key === 'Escape') setOpen(false) }
@@ -94,7 +96,7 @@ export default function Nav({ scrolled }) {
     : 'bg-white/70 border border-white/20 shadow-lg'
 
   return (
-    // flex-col stacks the pill and the mobile menu vertically.
+    
     <nav
       aria-label="Main navigation"
       className={`fixed top-0 left-0 right-0 z-50 flex flex-col items-center px-4 transition-all duration-300 ${scrolled ? 'py-3' : 'py-5'}`}
@@ -104,23 +106,22 @@ export default function Nav({ scrolled }) {
       >
         <Logo />
 
-        {/* Desktop links */}
+        {/* Desktop links. "/#about" works from the home page and from a project page. */}
         <ul className="hidden md:flex items-center gap-8">
           {navLinks.map(({ label, href }) => (
             <li key={href}>
-              <a
-                href={href}
+              <Link
+                to={`/${href}`}
                 onClick={() => setActive(href)}
-                className={`nav-link font-poppins font-semibold text-sm transition-colors
-                  ${active === href ? 'active text-primary' : 'text-muted-text hover:text-base-text'}`}
+                className={`nav-link font-semibold text-sm transition-colors
+                  ${active === href ? 'active text-accent' : 'text-muted-text hover:text-base-text'}`}
               >
                 {label}
-              </a>
+              </Link>
             </li>
           ))}
         </ul>
 
-        {/* Right side: theme toggle always visible; CTA on desktop; hamburger on mobile */}
         <div className="flex items-center gap-2 md:gap-3">
           <button
             type="button"
@@ -132,13 +133,13 @@ export default function Nav({ scrolled }) {
             <ThemeIcon theme={theme} />
           </button>
 
-          <a
-            href="#contact"
-            className="hidden md:inline-flex bg-primary text-body font-poppins font-bold text-sm px-5 py-2.5 rounded-full
+          <Link
+            to="/#contact"
+            className="hidden md:inline-flex bg-primary text-black font-bold text-sm px-5 py-2.5 rounded-full
               hover:bg-primary-shade hover:-translate-y-0.5 hover:shadow-lg hover:shadow-primary/20 transition-all"
           >
             Let's Talk
-          </a>
+          </Link>
 
           <button
             type="button"
@@ -163,22 +164,23 @@ export default function Nav({ scrolled }) {
         <div id="mobile-menu" className="md:hidden w-full max-w-7xl mt-2">
           <div className="bg-card border border-primary/10 rounded-2xl p-5 flex flex-col gap-4 max-h-[calc(100svh-6rem)] overflow-y-auto shadow-xl shadow-black/10">
             {navLinks.map(({ label, href }) => (
-              <a
-                key={href} href={href}
+              <Link
+                key={href}
+                to={`/${href}`}
                 onClick={() => { setActive(href); setOpen(false) }}
                 aria-current={active === href ? 'page' : undefined}
-                className={`font-poppins font-medium text-sm ${active === href ? 'text-primary' : 'text-muted-text'}`}
+                className={`font-medium text-sm ${active === href ? 'text-accent' : 'text-muted-text'}`}
               >
                 {label}
-              </a>
+              </Link>
             ))}
-            <a
-              href="#contact"
+            <Link
+              to="/#contact"
               onClick={() => setOpen(false)}
-              className="bg-primary text-body font-bold text-sm px-5 py-2.5 rounded-full text-center mt-2"
+              className="bg-primary text-black font-bold text-sm px-5 py-2.5 rounded-full text-center mt-2"
             >
               Let's Talk
-            </a>
+            </Link>
           </div>
         </div>
       )}

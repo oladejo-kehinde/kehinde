@@ -1,31 +1,43 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
 @import "tailwindcss";
 
+/* Makes dark: classes follow your theme toggle (the .dark class) */
+@custom-variant dark (&:where(.dark, .dark *));
 
 /* Base layout & smooth scroll */
 html, body {
   max-width: 100%;
   overflow-x: hidden;
   scroll-behavior: smooth;
-  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+/* Keeps section headings clear of the fixed nav when a link is clicked */
+html {
+  scroll-padding-top: 6rem;
+}
+
+/* Use Space Grotesk consistently across headings and body text. */
+@layer base {
+  h1, h2, h3 {
+    font-family: 'Space Grotesk', sans-serif;
+  }
 }
 
 /* Custom Scrollbar */
-::-webkit-scrollbar { 
-  width: 5px; 
+::-webkit-scrollbar {
+  width: 5px;
 }
-::-webkit-scrollbar-track { 
-  background: #08090a; 
+::-webkit-scrollbar-track {
+  background: var(--bg-body);
 }
-::-webkit-scrollbar-thumb { 
-  background: #279399; 
-  border-radius: 3px; 
+::-webkit-scrollbar-thumb {
+  background: #279399;
+  border-radius: 3px;
 }
 
 /* Navigation link underline indicator */
-.nav-link { 
-  position: relative; 
+.nav-link {
+  position: relative;
 }
 
 .nav-link::after {
@@ -35,19 +47,15 @@ html, body {
   left: 0;
   right: 0;
   height: 2px;
-  background: #31ccbf;
+  background: var(--accent-text);
   transform: scaleX(0);
   transition: transform 0.25s ease;
   border-radius: 2px;
 }
 
 .nav-link:hover::after,
-.nav-link.active::after { 
-  transform: scaleX(1); 
-}
-
-.nav-link.active { 
-  color: #31ccbf; 
+.nav-link.active::after {
+  transform: scaleX(1);
 }
 
 /* Design Tokens */
@@ -58,14 +66,7 @@ html, body {
   --primary-deep-shade: #0f423d;
 
   --secondary-base: #12cc89;
-  --secondary-tint: #d4f0e4;
-  --secondary-shade: #0e9368;
-
-  --tertiary-base: #cc313e;
-  --tertiary-shade: #531318;
-  --tertiary-tint: #fddde0;
-
-  --gray-light: #f5f5f5;
+  --accent-text: #0f766e; /* deeper teal for text on light backgrounds */
   --gray-medium: #cccccc;
 
   /* Light Theme Defaults */
@@ -83,10 +84,12 @@ html, body {
   --muted-text: rgba(245, 247, 246, 0.7);
   --card-bg: #0f1115;
   --surface-bg: #14171d;
+  --accent-text: #31ccbf;
 }
 
 @theme inline {
-  --font-sans: 'Plus Jakarta Sans', sans-serif;
+  --font-sans: 'Space Grotesk', sans-serif;
+  --font-mono: 'Space Grotesk', sans-serif;
 
   --color-primary: var(--primary-base);
   --color-primary-tint: var(--primary-tint);
@@ -94,14 +97,8 @@ html, body {
   --color-primary-deep-shade: var(--primary-deep-shade);
 
   --color-secondary: var(--secondary-base);
-  --color-secondary-tint: var(--secondary-tint);
-  --color-secondary-shade: var(--secondary-shade);
+  --color-accent: var(--accent-text);
 
-  --color-tertiary: var(--tertiary-base);
-  --color-tertiary-tint: var(--tertiary-tint);
-  --color-tertiary-shade: var(--tertiary-shade);
-
-  --color-gray-light: var(--gray-light);
   --color-gray-medium: var(--gray-medium);
 
   --color-body: var(--bg-body);
