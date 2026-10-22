@@ -28,7 +28,7 @@ export default function ContactSection() {
     submissionData.append("subject", `New Inquiry: ${formData.service || "General Inquiry"} from ${formData.name}`);
     submissionData.append("from_name", formData.name);
 
-    
+    // Append all form values
     Object.keys(formData).forEach((key) => {
       submissionData.append(key, formData[key]);
     });
@@ -41,19 +41,24 @@ export default function ContactSection() {
 
       const data = await response.json();
 
-      if (data.success) {
-        setStatusMessage("Thank you! Your message has been sent successfully.");
-        setFormData({
-          name: "",
-          email: "",
-          phone: "",
-          service: "",
-          timeline: "",
-          message: "",
-        });
-      } else {
-        setStatusMessage(data.message || "Something went wrong. Please try again.");
-      }
+    if (data.success) {
+  setStatusMessage("Thank you! Your message has been sent successfully.");
+  setFormData({
+    name: "",
+    email: "",
+    phone: "",
+    service: "",
+    timeline: "",
+    message: "",
+  });
+
+  
+  setTimeout(() => {
+    setStatusMessage("");
+  }, 3000);
+} else {
+  setStatusMessage(data.message || "Something went wrong. Please try again.");
+}
     } catch (error) {
       console.error("Submission error:", error);
       setStatusMessage("Failed to send message. Please check your internet connection.");
