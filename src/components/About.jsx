@@ -13,11 +13,11 @@ export default function About({ id = "about" }) {
                 <div className="relative mx-auto w-full max-w-sm">
                     <div
                         aria-hidden="true"
-                        className="absolute -bottom-10 -left-10 h-56 w-56 rounded-full bg-primary/30 blur-3xl"
+                        className="absolute -bottom-10 -left-10 h-56 w-56 rounded-full bg-primary/10 blur-3xl"
                     />
                     <div
                         aria-hidden="true"
-                        className="absolute -top-10 -right-10 h-56 w-56 rounded-full bg-secondary/20 blur-3xl"
+                        className="absolute -top-10 -right-10 h-56 w-56 rounded-full bg-primary/10 blur-3xl"
                     />
 
                     <div className="relative aspect-[4/5] w-full overflow-hidden rounded-[20px] border border-gray-medium/20 bg-card shadow-2xl">

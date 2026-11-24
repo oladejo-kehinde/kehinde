@@ -63,11 +63,11 @@ export default function Hero() {
       {/* Soft glow on the right, standing in for where the photo would sit */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute right-[8%] top-1/2 hidden h-[28rem] w-[28rem] -translate-y-1/2 rounded-full bg-primary/20 blur-3xl lg:block"
+        className="pointer-events-none absolute right-[8%] top-1/2 hidden h-[28rem] w-[28rem] -translate-y-1/2 rounded-full bg-primary/10 blur-3xl lg:block"
       />
 
       <div className="relative w-full max-w-7xl text-center lg:text-left">
-        {/* Name badge */}
+      
         {/* Name badge */}
         <div className="mb-2">
           <Badge>Oladejo Kehinde</Badge>
@@ -76,7 +76,7 @@ export default function Hero() {
         {/* One h1 per page; the role is part of it so search engines and screen readers read both together */}
         <h1 className="space-y-3 font-bold uppercase leading-tight tracking-tight">
           <span className="block text-2xl text-base-text sm:text-3xl lg:text-4xl">
-            Hi, I&apos;m Kenny
+            Hi, I&apos;m Kehinde
           </span>
           <span className="block text-2xl text-accent sm:text-3xl lg:text-4xl">
             Automation Specialist
@@ -84,11 +84,14 @@ export default function Hero() {
         </h1>
 
         {/* Normal sentence case so the longer line stays easy to read */}
-        <p className="mx-auto mt-8 max-w-xl lg:mx-0 text-base font-medium leading-relaxed text-base-text md:text-lg">
-          Building smarter workflows and making everyday work simpler through
-          automation and digital tools.
-        </p>
+        {/* <p className="mx-auto mt-8 max-w-xl lg:mx-0 text-base font-medium leading-relaxed text-base-text md:text-lg">
 
+        I help people and businesses save time by automating repetitive tasks and simplifying everyday work.
+        </p> */}
+        <p className="mx-auto mt-8 max-w-xl lg:mx-0 text-base font-medium leading-relaxed text-base-text md:text-lg">
+
+        I build practical automation systems that connect applications, simplify business processes, organise information and reduce repetitive work for individuals, businesses and teams.
+          </p>
         {/* Actions */}
         <div className="mt-10 flex flex-wrap items-center justify-center gap-4 lg:justify-start">
           <a

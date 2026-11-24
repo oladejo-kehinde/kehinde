@@ -24,7 +24,7 @@ const services = [
   },
   {
     id: 3,
-    title: "Data Management & Business Systems",
+    title: "Administrative & Business Support",
     description: "",
     icon: (
       <svg className="h-7 w-7 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">

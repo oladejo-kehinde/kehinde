@@ -51,11 +51,11 @@ function Layout() {
             element={
               <>
                 <Hero />
-                <About />
-                <Services />
-                <Projects />
-                <ToolsStack/>
-                <Contact/>
+<ToolsStack />
+<Projects />
+<About />
+<Services />
+<Contact />
               </>
             }
           />

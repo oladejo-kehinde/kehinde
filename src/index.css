@@ -60,12 +60,12 @@ html {
 
 /* Design Tokens */
 :root {
-  --primary-base: #31ccbf;
+  --primary-base: #3aa8a0;
   --primary-tint: #e5fbfb;
-  --primary-shade: #279399;
+--primary-shade: #2a7f7a;
   --primary-deep-shade: #0f423d;
 
-  --secondary-base: #12cc89;
+  --secondary-base: #3aa8a0;
   --accent-text: #0f766e; /* deeper teal for text on light backgrounds */
   --gray-medium: #cccccc;
 
@@ -75,6 +75,8 @@ html {
   --muted-text: rgba(12, 12, 12, 0.65);
   --card-bg: #ffffff;
   --surface-bg: #fafafa;
+
+
 }
 
 /* Dark Theme Overrides (Near-Black Professional Aesthetics) */
