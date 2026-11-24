@@ -120,7 +120,7 @@ export default function ProjectPage() {
         <div className="mt-8 space-y-4">
           {project.before && (
             <FadeIn>
-              <Callout icon="💡">
+              <Callout icon="">
                 <p className="font-bold text-base-text">Before</p>
                 <p className="mt-1 text-muted-text">{project.before}</p>
               </Callout>
@@ -129,7 +129,7 @@ export default function ProjectPage() {
 
           {project.after && (
             <FadeIn>
-              <Callout icon="💡" accent>
+              <Callout icon="" accent>
                 <p className="font-bold text-base-text">After</p>
                 <p className="mt-1 text-base-text/90">{project.after}</p>
               </Callout>
@@ -164,7 +164,7 @@ export default function ProjectPage() {
               </div>
             )}
             {project.howItsBuilt && (
-              <Callout icon="💡">
+              <Callout icon="">
                 <p className="text-base-text">{project.howItsBuilt}</p>
               </Callout>
             )}
